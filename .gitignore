@@ -20,6 +20,8 @@ data/
 # VS Code / IDE junk
 .vscode/
 .idea/
+.pytest_cache/
+.ruff_cache/
 
 # OS junk
 .DS_Store
