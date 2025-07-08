@@ -1,0 +1,72 @@
+version: 1
+
+sources:
+  - name: raw
+    tables:
+      -name: yellow_taxi_trips
+
+models:
+  - name: stg_yellow_taxi_trips
+    description: "Staging model for yellow taxi trips data"
+    columns:
+      - name: trip_id
+        description: "Unique identifier for each trip"
+        tests:
+          - not_null
+          - unique
+      - name: vendorid
+        description: "Identifier for the taxi vendor"
+        tests:
+          - not_null
+      - name: tpepickup_datetime
+        description: "Pickup date and time"
+        tests:
+          - not_null
+      - name: tpedropoff_datetime
+        description: "Dropoff date and time"
+        tests:
+          - not_null
+      - name: passenger_count
+        description: "Number of passengers in the trip"
+      - name: trip_distance
+        description: "Distance of the trip in miles"
+        tests:
+          - not_null
+      - name: ratecodeid
+        description: "Rate code for the trip"
+      - name: store_and_fwd_flag
+        description: "Flag indicating if the trip data was stored and forwarded"
+      - name: pulocationid
+        description: "Pickup location ID"
+        tests:
+          - not_null
+      - name: dolocationid
+        description: "Dropoff location ID"
+        tests:
+          - not_null
+      - name: payment_type
+        description: "Payment type for the trip"
+      - name: fare_amount
+        description: "Fare amount for the trip"
+        tests:
+          - not_null
+      - name: extra
+        description: "Extra charges for the trip"
+      - name: mta_tax
+        description: "MTA tax for the trip"
+      - name: tip_amount
+        description: "Tip amount for the trip"
+      - name: tolls_amount
+        description: "Tolls amount for the trip"
+      - name: improvement_surcharge
+        description: "Improvement surcharge for the trip"
+      - name: total_amount
+        description: "Total amount for the trip"
+        tests:
+          - not_null
+      - name: congestion_surcharge
+        description: "Congestion surcharge for the trip"
+      - name: airport_fee
+        description: "Airport fee for the trip"
+      - name: cbd_congestion_fee
+        description: "Central Business District congestion fee for the trip"
