@@ -14,3 +14,12 @@ services:
       - SNOWFLAKE_SCHEMA=${SNOWFLAKE_SCHEMA:-ANALYTICS}
     stdin_open: true
     tty: true
+    command: ["dbt", "--help"]
+
+  tests:
+    build: .
+    volumes:
+      - .:/dbt
+    environment:
+      - PYTHONPATH=/dbt
+    command: ["pytest", "tests/"]
