@@ -1,0 +1,25 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# dbt-generated folders
+dbt_modules/
+dbt_packages/
+target/
+logs/
+
+# dbt Core config files
+.profiles.yml
+.users.yml
+.user.yml
+
+# Secrets
+.env
+
+# VS Code / IDE junk
+.vscode/
+.idea/
+
+# OS junk
+.DS_Store
+Thumbs.db
