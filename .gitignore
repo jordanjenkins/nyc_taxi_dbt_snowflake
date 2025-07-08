@@ -26,3 +26,4 @@ data/
 # OS junk
 .DS_Store
 Thumbs.db
+dbt_internal_packages/

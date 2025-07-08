@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_zone
+    description: "Dimension table for NYC taxi zones"
+    columns:
+      - name: location_id
+        description: "Unique identifier for the location"
+        tests:
+          - not_null
+          - unique
+      - name: borough
+        description: "Borough of the location"
+      - name: zone
+        description: "Taxi zone name"
+      - name: service_zone
+        description: "Service zone for the taxi"
