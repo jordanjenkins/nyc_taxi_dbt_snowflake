@@ -18,9 +18,9 @@ WITH source_data AS (
         TO_TIMESTAMP_NTZ("tpep_dropoff_datetime" / 1000000) AS dropoff_datetime,
         MD5(TO_VARCHAR("tpep_pickup_datetime") || TO_VARCHAR("tpep_dropoff_datetime") || TO_VARCHAR("VendorID")) AS trip_id
     FROM {{ source('raw', 'yellow_taxi_trips') }}
-    {% if is_incremental() %}
-    WHERE DATE_TRUNC('month', TO_TIMESTAMP_NTZ("tpep_pickup_datetime" / 1000000)) = DATE_TRUNC('month', CURRENT_DATE())
-    {% endif %}
+    -- {% if is_incremental() %}
+    -- WHERE DATE_TRUNC('month', TO_TIMESTAMP_NTZ("tpep_pickup_datetime" / 1000000)) = DATE_TRUNC('month', CURRENT_DATE())
+    -- {% endif %}
 )
 
 SELECT

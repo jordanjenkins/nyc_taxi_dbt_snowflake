@@ -1,4 +1,4 @@
-version: 1
+version: 2
 
 sources:
   - name: raw
@@ -71,3 +71,17 @@ models:
         description: "Airport fee for the trip"
       - name: cbd_congestion_fee
         description: "Central Business District congestion fee for the trip"
+  - name: stg_taxi_zone_lookup
+    description: "Staging model for taxi zone lookup data"
+    columns:
+      - name: location_id
+        description: "Unique identifier for the location"
+        tests:
+          - not_null
+          - unique
+      - name: borough
+        description: "Borough of the location"
+      - name: zone
+        description: "Taxi zone name"
+      - name: service_zone
+        description: "Service zone for the taxi"

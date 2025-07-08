@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: fct_trip_summary
+    description: "Fact table summarizing NYC taxi trips"
+    columns:
+      - name: trip_hour
+        description: "Hour of the trip"
+        tests:
+          - not_null
+      - name: pickup_borough
+        description: "Borough where the trip started"
+      - name: dropoff_borough
+        description: "Borough where the trip ended"
+      - name: total_trips
+        description: "Total number of trips in the hour"
+      - name: avg_trip_distance
+        description: "Average distance of trips in the hour"
+      - name: avg_fare_amount
+        description: "Average fare amount of trips in the hour"
+      - name: avg_tip_amount
+        description: "Average tip amount of trips in the hour"
+      - name: avg_revenue
+        description: "Average revenue from trips in the hour"
