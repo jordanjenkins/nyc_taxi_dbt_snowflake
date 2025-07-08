@@ -2,8 +2,9 @@ version: 1
 
 sources:
   - name: raw
+    schema: raw
     tables:
-      -name: yellow_taxi_trips
+      - name: yellow_taxi_trips
 
 models:
   - name: stg_yellow_taxi_trips
@@ -18,11 +19,11 @@ models:
         description: "Identifier for the taxi vendor"
         tests:
           - not_null
-      - name: tpepickup_datetime
+      - name: pickup_datetime
         description: "Pickup date and time"
         tests:
           - not_null
-      - name: tpedropoff_datetime
+      - name: dropoff_datetime
         description: "Dropoff date and time"
         tests:
           - not_null
