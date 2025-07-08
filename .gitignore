@@ -7,6 +7,7 @@ dbt_modules/
 dbt_packages/
 target/
 logs/
+data/
 
 # dbt Core config files
 .profiles.yml
